@@ -106,7 +106,7 @@ TokenType getToken(void)
           state = INEQ;
         else if(c=='>')
           state = INGT;
-        else if (c == '/') //consider it as a way to make comment, nor division
+        else if (c == '/') //consider it as a way to make comment, not division
         { 
           save = FALSE;
           state = INCOMMENT_;
@@ -116,6 +116,7 @@ TokenType getToken(void)
         { state = DONE;
           switch (c)
           { case EOF:
+            case '\0':
               save = FALSE;
               currentToken = ENDFILE;
               break;
@@ -175,7 +176,7 @@ TokenType getToken(void)
            state = DONE;
         }
         break;
-      // If '=' doesn't come, it is "LT" Token. If '=' comes, it is "LE" token.
+      // If '=' doesn't come, it is a LT Token. If '=' comes, it is a LE token.
       case INLT:
         if(c=='='){
           currentToken = LE;
