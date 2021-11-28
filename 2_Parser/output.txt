@@ -1,0 +1,22 @@
+
+C-MINUS COMPILATION: test.txt
+
+Syntax tree:
+  Function Declaration: name = main, return type = int
+    Parameter: name = a, type = int[]
+    Compound Statement:
+      If-Else Statement
+        Op: <
+          Variable: name = a
+          Const: 0
+        Compound Statement:
+          If Statement
+            Op: >
+              Variable: name = a
+              Const: 3
+            Assign:
+              Variable: name = a
+              Const: 3
+        Assign:
+          Variable: name = a
+          Const: 4
